@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset HP Horor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Creepster', cursive;
+      background: radial-gradient(circle at center, #0b0000, #000);
+      overflow: hidden;
+      color: #ff3333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    /* Latar belakang asap/aurora */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://media.giphy.com/media/3o6ZsXa4CkqfLeQGxy/giphy.gif') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(20, 0, 0, 0.9);
+      border: 2px solid crimson;
+      border-radius: 10px;
+      box-shadow: 0 0 30px red;
+      max-width: 400px;
+      width: 90%;
+      padding: 30px 20px;
+      text-align: center;
+      animation: pulse 3s infinite alternate;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 20px;
+      color: #ff1a1a;
+      text-shadow: 0 0 10px red, 0 0 25px darkred;
+      animation: flicker 1.8s infinite;
+    }
+
+    label {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 8px;
+      color: #ff5555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      background: #111;
+      border: 1px solid crimson;
+      border-radius: 5px;
+      color: #f66;
+      font-size: 16px;
+      box-shadow: 0 0 10px red;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      position: relative;
+      padding: 10px 22px;
+      margin: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: #000;
+      border: none;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    button::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, red, purple, blue, red);
+      z-index: -1;
+      animation: borderSpin 4s linear infinite;
+      filter: blur(4px);
+    }
+
+    button::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background: black;
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    #hasil {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ff3333;
+      text-shadow: 0 0 6px red;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px crimson; }
+      100% { box-shadow: 0 0 25px red; }
+    }
+
+    @keyframes flicker {
+      0%, 18%, 20%, 22%, 100% { opacity: 1; }
+      19%, 21% { opacity: 0.3; }
+    }
+
+    @keyframes borderSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RESET PHONE BY ALWAYSFHII</h1>
+    <form onsubmit="event.preventDefault()">
+      <label for="nomor">SILAHKAN MASUKAN NOMOR TARGET DIBAWAH TUAN FHII, DAN PILIH TYPE RESET DIBAWAH🥶:</label>
+      <input type="text" id="nomor" name="nomor">
+      <div>
+        <button onclick="resetHP()">TYPE RESET ANDROID</button>
+        <button onclick="resetIPHONE()">TYPE RESET IPHONE</button>
+      </div>
+    </form>
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    function resetHP() {
+      const nomor = document.getElementById("nomor").value;
+      document.getElementById("hasil").innerHTML =
+        `💀 ANDROID DENGAN NOMOR <b>${nomor}</b> SUCCSEFULLY RESET PHONE!!`;
+    }
+
+    function resetIPHONE() {
+      const nomor = document.getElementById("nomor").value;
+      document.getElementById("hasil").innerHTML =
+        `👻 IPHONE DENGAN NOMOR <b>${nomor}</b> SUCCSEFULLY RESET PHONE!!`;
+    }
+  </script>
+</body>
+</html>
